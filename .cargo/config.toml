@@ -1,0 +1,3 @@
+[target.'cfg(all(windows, target_env = "msvc"))']
+# Cargo links both VCRuntime and UCRT here. Tauri's override would select a shared UCRT.
+rustflags = ["-C", "target-feature=+crt-static"]

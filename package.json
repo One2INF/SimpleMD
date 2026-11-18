@@ -1,0 +1,38 @@
+{
+  "name": "simplemd",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@codemirror/commands": "^6",
+    "@codemirror/lang-markdown": "^6",
+    "@codemirror/language": "^6",
+    "@codemirror/state": "^6",
+    "@codemirror/view": "^6",
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-dialog": "^2",
+    "@tauri-apps/plugin-opener": "^2",
+    "docx": "^9",
+    "highlight.js": "^11",
+    "lucide-vue-next": "^0.468.0",
+    "markdown-it": "^14",
+    "naive-ui": "^2",
+    "pinia": "^3",
+    "vue": "^3"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4",
+    "@tauri-apps/cli": "^2",
+    "@types/markdown-it": "^14",
+    "@vitejs/plugin-vue": "^6",
+    "tailwindcss": "^4",
+    "typescript": "~5.9.3",
+    "vite": "^7",
+    "vue-tsc": "^3"
+  }
+}

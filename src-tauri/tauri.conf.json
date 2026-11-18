@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "SimpleMD",
+  "version": "0.1.0",
+  "identifier": "app.simplemd.editor",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist",
+    "windows": {"staticVCRuntime": false}
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "SimpleMD",
+        "width": 1440,
+        "height": 900,
+        "minWidth": 840,
+        "minHeight": 560,
+        "backgroundColor": "#ffffff",
+        "decorations": false,
+        "devtools": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' ipc: http://ipc.localhost; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https: http:; connect-src ipc: http://ipc.localhost; object-src 'none'; base-uri 'none'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "icon": ["icons/icon.ico"],
+    "fileAssociations": [{"ext":["md","markdown","mdown","mkd"],"name":"Markdown 文档","role":"Editor"}],
+    "windows": {
+      "nsis": {
+        "languages": ["SimpChinese", "English"],
+        "displayLanguageSelector": false,
+        "installerIcon": "icons/icon.ico",
+        "uninstallerIcon": "icons/icon.ico"
+      }
+    }
+  }
+}

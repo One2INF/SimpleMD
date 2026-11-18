@@ -1,0 +1,51 @@
+.markdown {
+  color: var(--doc-text, #283a33);
+  font-family: var(--doc-font, "Segoe UI", "Microsoft YaHei", sans-serif);
+  font-size: var(--doc-size, 15px);
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.markdown :where(h1,h2,h3,h4,h5,h6) { line-height: 1.34; margin: 1.35em 0 .48em; font-weight: 700; letter-spacing: -.025em; }
+.markdown :where(h1) { font-size: 2.25em; margin-top: 0; }
+.markdown :where(h2) { font-size: 1.48em; border-bottom: 1px solid var(--doc-line, #dbe3da); padding-bottom: .35em; }
+.markdown :where(h3) { font-size: 1.15em; }
+.markdown :where(h4,h5,h6) { font-size: 1em; }
+.markdown :where(p,ul,ol,blockquote,pre,table) { margin: .68em 0 1em; }
+.markdown :where(ul,ol) { padding-left: 1.75em; }
+.markdown :where(ul) { list-style: disc; }
+.markdown :where(ol) { list-style: decimal; }
+.markdown :where(li) { margin: .12em 0; }
+.markdown :where(li > ul,li > ol,li > p) { margin: .14em 0; }
+.markdown :where(.task-item) { list-style: none; }
+.markdown :where(.task-check) { accent-color: #386c54; vertical-align: -.08em; margin-right: .4em; }
+.markdown :where(blockquote) { border-left: 3px solid var(--doc-accent, #47745c); padding: .72em 1em; background: var(--doc-tint, #eaf1e9); border-radius: 0 7px 7px 0; }
+.markdown :where(blockquote > :first-child) { margin-top: 0; }
+.markdown :where(blockquote > :last-child) { margin-bottom: 0; }
+.markdown :where(a) { color: var(--doc-accent, #35664d); text-decoration: underline; text-underline-offset: .16em; }
+.markdown :where(hr) { border: 0; border-top: 1px solid var(--doc-line, #dbe3da); margin: 1.5em 0; }
+.markdown :where(img) { display: inline-block; height: auto; max-width: 100%; vertical-align: middle; }
+.markdown :where(img:not([src])) { color: var(--doc-accent, #47745c); min-width: 1.2em; min-height: 1em; border: 1px dashed var(--doc-line,#ccd8cc); }
+.markdown :where(table) { width: 100%; border-collapse: collapse; font-size: .96em; }
+.markdown :where(th,td) { border: 1px solid var(--doc-line, #dbe3da); padding: .45em .68em; text-align: left; }
+.markdown :where(th) { background: var(--doc-tint, #eaf1e9); }
+.markdown :where(tr:nth-child(even)) { background: var(--doc-stripe, #f6f8f4); }
+.markdown :where(pre,code) { font-family: "Cascadia Mono", Consolas, "Microsoft YaHei", monospace; font-size: .91em; }
+.markdown :where(:not(pre) > code) { background: var(--doc-tint, #eaf1e9); padding: .08em .28em; border-radius: 4px; }
+.markdown :where(pre) { color: #dde9df; background: #202e29; border-radius: 8px; padding: .9em 1.08em; line-height: 1.68; white-space: pre-wrap; tab-size: 4; }
+.markdown :where(pre code) { font-size: inherit; }
+.markdown :where(.hljs-keyword,.hljs-selector-tag,.hljs-literal) { color: #dfabed; }
+.markdown :where(.hljs-string,.hljs-regexp,.hljs-addition) { color: #cce898; }
+.markdown :where(.hljs-number,.hljs-variable,.hljs-symbol,.hljs-attr) { color: #f2ca92; }
+.markdown :where(.hljs-built_in,.hljs-type,.hljs-title,.hljs-section,.hljs-name) { color: #9bd7e9; }
+.markdown :where(.hljs-comment,.hljs-quote) { color: #a1b6a8; font-style: italic; }
+.markdown :where(.hljs-meta,.hljs-deletion) { color: #ffa9a5; }
+
+@page { size: A4; margin: 16mm; background: white; }
+@media print {
+  .markdown { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .markdown :where(h1,h2,h3,h4,h5,h6) { break-after: avoid; }
+  .markdown :where(p) { orphans: 2; widows: 2; }
+  .markdown :where(img) { max-height: 245mm; object-fit: contain; break-inside: avoid; }
+  .markdown :where(thead) { display: table-header-group; }
+  .markdown :where(tr) { break-inside: avoid; }
+}
